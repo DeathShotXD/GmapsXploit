@@ -22,7 +22,7 @@ Based on current Google Cloud Platform pricing, the unrestricted nature of this 
 - Financial damage calculation based on official Google pricing
 
 ### Remediation
-1. Go to Google Cloud Console → APIs & Services → Credentials.  
+1. Go to Google Cloud Console -> APIs & Services -> Credentials.  
 2. Select the affected API key.  
 3. Apply **Application Restrictions** (restrict by HTTP Referrers or IP addresses).  
 4. Apply **API Restrictions** to limit the key to only the required services.  
