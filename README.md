@@ -1,71 +1,56 @@
-![Logo](logo.png)
+# GmapsXploit
 
-[![GitHub stars](https://img.shields.io/github/stars/DeathShotXD/GmapsXploit?style=social)](https://github.com/DeathShotXD/GmapsXploit/stargazers)
-[![GitHub license](https://img.shields.io/github/license/DeathShotXD/GmapsXploit)](LICENSE)
-[![Bash Version](https://img.shields.io/badge/bash-%3E%3D4.0-green)]()
+GmapsXploit audits exposed or unrestricted Google API keys and turns them
+into high-impact findings. It tests a key against Google Maps, Places, Roads,
+the newer Routes and Aerial View endpoints, and several Cloud services, then
+shows the real risk: what the key can reach and what it costs. Instead of a
+low severity note, you get a clear impact and a ready-to-submit report.
 
-# GmapsXploit - Ultimate Google API Key Auditor
+<p align="center">
+  <img src="logo.png" alt="GmapsXploit" width="340">
+</p>
 
-GmapsXploit is an open-source tool built for bug bounty hunters to turn exposed or unrestricted Google API keys into high-impact findings.
+<br>
 
-It audits Google API keys across multiple services such as Maps, Places, Roads, Gemini, Firebase, Vision and more, and helps demonstrate real risks like data exposure and billing abuse.
+## What is GmapsXploit?
 
-Instead of reporting low severity issues, this tool helps you show clear impact with actual cost calculations and ready-to-use reports.
+It is a single Bash script for bug bounty hunters, penetration testers, and
+researchers who find Google API keys in web apps, mobile apps, or extensions.
+It probes the key across more than thirty endpoints, detects restrictions such
+as IP or referer limits, estimates billing impact from request volume, and
+writes a Markdown report suitable for a program.
 
-## Why use GmapsXploit
+<br>
 
-- Covers more than 30 Google Cloud endpoints including Maps, Places, Roads and newer APIs
-- Calculates financial impact based on request volume
-- Detects API key restrictions such as IP or referer limits
-- Generates a ready-to-submit Markdown report for bug bounty platforms
-- Clean terminal output with no external dependencies
-- Useful for escalating API key exposure from low to critical severity
+> An exposed Google API key is not a low finding when it is unrestricted and
+> bills someone else's account.
 
-## Key Features
+## Why this matters
 
-### Core APIs tested
-- Static Maps
-- Street View
-- Geocoding
-- Directions
-- Distance Matrix
-- Elevation
-- Timezone
+Unrestricted Google API keys, especially with Places or the advanced APIs
+enabled, allow anyone to run up a bill on the owner's account. There are
+public cases where costs reached tens of thousands of dollars in a short
+time. GmapsXploit shows that impact with real numbers and a working proof.
 
-### Places API
-- Nearby Search
-- Text Search
-- Find Place
-- Autocomplete
-- Place Details
-- Photos
+## Coverage
 
-### Roads API
-- Nearest Roads
-- Snap to Roads
-- Speed Limits
+- Core Maps: Static Maps, Street View, Geocoding, Directions, Distance Matrix,
+  Elevation, Timezone.
+- Places: Nearby Search, Text Search, Find Place, Autocomplete, Place Details,
+  Photos.
+- Roads: Nearest Roads, Snap to Roads, Speed Limits.
+- Other: Air Quality, Pollen Forecast, Routes, Aerial View.
+- Cloud services: Gemini, Cloud Vision, Translation, Custom Search,
+  Geolocation, Firebase Dynamic Links, Address Validation.
 
-### Other APIs
-- Air Quality
-- Pollen Forecast
-- Routes API
-- Aerial View API
+## Features
 
-### Cloud services
-- Gemini Generative Language
-- Cloud Vision
-- Translation API
-- Custom Search
-- Geolocation API
-- Firebase Dynamic Links
-- Address Validation
-
-## Features in action
-
-- Shows vulnerability status in real time
-- Displays financial impact per 100k requests
-- Generates two reports automatically
-- Optional request simulation for proof of impact
+- Tests more than thirty Google Cloud endpoints in one pass.
+- Calculates financial impact from request volume.
+- Detects key restrictions such as IP or referer limits.
+- Generates a ready-to-submit Markdown report.
+- Clean terminal output with no external dependencies.
+- Helps escalate API key exposure from low to critical severity.
 
 ## Installation
 
@@ -76,65 +61,97 @@ chmod +x GmapsXploit.sh
 ./GmapsXploit.sh
 ```
 
-## Usage
+Bash 4.0 or later. No external dependencies.
 
-Run the script:
+## Usage
 
 ```bash
 ./GmapsXploit.sh
 ```
 
-Steps:
+1. Enter the target Google API key.
+2. Watch the reconnaissance phase.
+3. Review the financial impact results.
+4. Use the generated report for submission.
 
-1. Enter the target Google API key
-2. Observe the reconnaissance phase
-3. Review the financial impact results
-4. Use the generated report for submission
+## Output
 
-## Output files
+Each run writes two files:
 
-Each run generates:
+- `gmapsxploit_report_*.txt` - the full technical detail.
+- `bounty_report_*.md` - a submission-ready report.
 
-- gmapsxploit_report_*.txt  
-  Contains full technical details
+## Example
 
-- bounty_report_*.md  
-  Ready to submit report for bug bounty platforms
-  
-## Example Output
+![Demo output](demo.png)
 
-![Demo Output](demo.png)
+| Endpoint tested | Status |
+|-----------------|--------|
+| Static Maps | VULNERABLE |
+| Places Nearby | VULNERABLE |
 
+Generated report: `gmapsxploit_report_1774767832.txt`.
 
-| Endpoint Tested | Status      |
-|-----------------|-------------|
-| Static Maps     | VULNERABLE  |
-| Places Nearby   | VULNERABLE  |
+A sample report is in
+[examples/gmapsxploit_report_sample.txt](examples/gmapsxploit_report_sample.txt).
 
-Generated report: `gmapsxploit_report_1774767832.txt`
+## Detection and defensive guidance
 
-## Real world impact
+Indicators of exposure to look for:
 
-Unrestricted Google API keys, especially those with Places or advanced APIs enabled, can lead to serious billing abuse.
+- API keys present in client-side code, bundles, or app packages.
+- Requests to Google API hosts from unexpected sources.
+- Billing spikes without a matching deployment.
 
-There have been cases where costs reached tens of thousands of dollars within a short time.
+Mitigations:
 
-This tool helps you demonstrate that impact clearly with real numbers and working proof.
+- Restrict every key by application, IP, referer, or API.
+- Keep keys server-side and out of client bundles.
+- Enable budget alerts and quotas per key.
+- Rotate any key that has been public.
 
-## Who should use this
+## Repository structure
 
-- Bug bounty hunters looking for high impact findings
-- Penetration testers auditing cloud configurations
-- Security researchers analyzing exposed API keys in web apps, mobile apps or extensions
+```
+GmapsXploit/
+|-- GmapsXploit.sh
+|-- report_template.md
+|-- README.md
+|-- LICENSE
+|-- SECURITY.md
+|-- CHANGELOG.md
+|-- CONTRIBUTING.md
+|-- PLAN.md
+|-- logo.png
+|-- demo.png
+|-- examples/
+|   +-- gmapsxploit_report_sample.txt
++-- tests/
+    +-- smoke.sh
+```
+
+## Limitations
+
+- Impact is estimated from published pricing and request volume; Google may
+  cap or bill differently.
+- A restricted key can still be valid; the tool reports the restriction.
+- Coverage tracks the public endpoints at the time of release.
+
+## References
+
+- Google Maps Platform API security best practices.
+- Google Maps Platform pricing.
+
+## Responsible use
+
+GmapsXploit is built for authorized security testing. Run it only against
+keys and accounts you own or have explicit permission to test. Using it
+against systems without authorization may violate law.
 
 ## Credits
 
-Author: D34thSh0tX_X  
-GitHub: [https://github.com/DeathShotXD](https://github.com/DeathShotXD)  
-Project: GmapsXploit
-
-If you find this tool useful, consider starring the repository.
+Author: D34thSh0tX_X (github.com/DeathShotXD).
 
 ## License
 
-MIT License
+MIT. See [LICENSE](LICENSE).
