@@ -8,10 +8,13 @@ Notable changes to GmapsXploit, newest first.
 
 - Rewrote the README in plain ASCII with the project layout used across the
   repository set.
+- Restructured the README around an animated visual kit and added Places
+  Aggregate to the Places coverage list.
 - Reworked the script with argument parsing, help, and version output.
 
 ### Added
 
+- Animated SVG hero, coverage map, and section divider in `assets/`.
 - Command line options for the key, output directory, timeout, simulation,
   count, color, and quiet output.
 - Both a text report and a Markdown report per run.

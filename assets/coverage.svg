@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 440" width="1200" height="440" role="img" aria-labelledby="ctitle cdesc">
+  <title id="ctitle">GmapsXploit coverage map: thirty-one endpoints across six surfaces</title>
+  <desc id="cdesc">An exposed Google API key panel beside six cards for Maps, Places, Roads, Gemini, Cloud, and new APIs, with endpoint counts, example services, and a sample billing impact band.</desc>
+  <defs>
+    <linearGradient id="cbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#04101a"/>
+      <stop offset=".55" stop-color="#061622"/>
+      <stop offset="1" stop-color="#0a0f17"/>
+    </linearGradient>
+    <radialGradient id="cglow" cx=".18" cy=".4" r=".7">
+      <stop offset="0" stop-color="#8bff4a" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#8bff4a" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="cgrid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#2fd9f2" stroke-opacity=".04"/>
+    </pattern>
+    <pattern id="cdots" width="10" height="10" patternUnits="userSpaceOnUse">
+      <circle cx="1.4" cy="1.4" r=".85" fill="#f4e5c8" fill-opacity=".04"/>
+    </pattern>
+    <linearGradient id="cimpact" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8bff4a"/>
+      <stop offset=".55" stop-color="#ff8a1f"/>
+      <stop offset="1" stop-color="#ff2d46"/>
+    </linearGradient>
+    <style>
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+      .head { font-size: 12px; font-weight: 800; letter-spacing: 3px; fill: #8bff4a; }
+      .head-sub { font-size: 9px; letter-spacing: 1.8px; fill: #8ba3b0; }
+      .card-title { font-size: 13px; font-weight: 800; letter-spacing: 1.7px; }
+      .card-count { font-size: 11px; font-weight: 800; letter-spacing: 1px; }
+      .card-ex { font-size: 9.5px; letter-spacing: .3px; }
+      .card-tag { font-size: 7.5px; font-weight: 700; letter-spacing: 1.4px; }
+      .panel-h { font-size: 8px; font-weight: 700; letter-spacing: 1.9px; fill: #8ba3b0; }
+      .panel-v { font-size: 10px; font-weight: 800; letter-spacing: .4px; }
+      .flow { stroke-dasharray: 4 6; animation: cflow 2s linear infinite; }
+      .blink { animation: cblink 1.2s steps(1) infinite; }
+      .pulse { animation: cpulse 3.2s ease-in-out infinite; }
+      @keyframes cflow { to { stroke-dashoffset: -40; } }
+      @keyframes cblink { 0%,49% { opacity: 1; } 50%,100% { opacity: .2; } }
+      @keyframes cpulse { 0%,100% { opacity: .5; } 50% { opacity: 1; } }
+      @media (prefers-reduced-motion: reduce) { .flow,.blink,.pulse { animation: none; } }
+    </style>
+  </defs>
+
+  <rect width="1200" height="440" fill="url(#cbg)"/>
+  <rect width="1200" height="440" fill="url(#cgrid)"/>
+  <rect width="1200" height="440" fill="url(#cdots)" opacity=".8"/>
+  <rect width="1200" height="440" fill="url(#cglow)"/>
+
+  <text x="40" y="38" class="mono head">SURFACE MAP</text>
+  <text x="196" y="38" class="mono head-sub">/ WHAT ONE KEY CAN REACH</text>
+  <text x="1160" y="38" text-anchor="end" class="mono head-sub" fill="#f4e5c8" opacity=".8">31 ENDPOINTS / 6 SURFACES</text>
+
+  <!-- exposed key panel -->
+  <g transform="translate(40 64)">
+    <rect x="0" y="0" width="300" height="340" rx="14" fill="#07141f" fill-opacity=".92" stroke="#8bff4a" stroke-opacity=".22"/>
+    <rect x="0" y="0" width="300" height="3" fill="#8bff4a" opacity=".55"/>
+
+    <g transform="translate(22 26)">
+      <path d="M10 0 C4 0 0 4 0 10 C0 18 10 26 10 26 C10 26 20 18 20 10 C20 4 16 0 10 0 Z"
+            fill="#8bff4a" fill-opacity=".12" stroke="#8bff4a" stroke-width="1.3"/>
+      <circle cx="10" cy="10" r="3.6" fill="#ff2d46" class="pulse"/>
+    </g>
+    <text x="52" y="34" class="mono panel-h" fill="#ff2d46">EXPOSED KEY</text>
+    <text x="22" y="66" class="mono" font-size="16" font-weight="800" fill="#f4e5c8" letter-spacing=".5">AIza&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;</text>
+    <text x="22" y="84" class="mono panel-h">GOOGLE API KEY / CLIENT-SIDE</text>
+
+    <path d="M22 106 H278" stroke="#f4e5c8" stroke-opacity=".1"/>
+
+    <text x="22" y="130" class="mono panel-h">REFERER RESTRICTION</text>
+    <text x="278" y="130" text-anchor="end" class="mono panel-v" fill="#ffa3ad">NONE</text>
+
+    <text x="22" y="162" class="mono panel-h">IP RESTRICTION</text>
+    <text x="278" y="162" text-anchor="end" class="mono panel-v" fill="#ffa3ad">NONE</text>
+
+    <text x="22" y="194" class="mono panel-h">VULNERABLE APIS</text>
+    <text x="278" y="194" text-anchor="end" class="mono panel-v" fill="#ff8a1f">7 DETECTED</text>
+
+    <text x="22" y="226" class="mono panel-h">KEY STATUS</text>
+    <text x="278" y="226" text-anchor="end" class="mono panel-v" fill="#8bff4a">UNRESTRICTED</text>
+
+    <path d="M22 248 H278" stroke="#f4e5c8" stroke-opacity=".1"/>
+
+    <text x="22" y="274" class="mono panel-h">SAMPLE RUN</text>
+    <text x="22" y="300" class="mono" font-size="13" font-weight="800" fill="#f4e5c8" letter-spacing=".4">7 / 31 VULNERABLE</text>
+    <text x="22" y="320" class="mono" font-size="10" fill="#8bff4a">EST. $8,383 / 100K REQ</text>
+
+    <circle cx="262" cy="300" r="10" fill="#ff2d46" fill-opacity=".12" stroke="#ff2d46" stroke-opacity=".3"/>
+    <circle cx="262" cy="300" r="3.2" fill="#ff2d46" class="blink"/>
+  </g>
+
+  <!-- connectors -->
+  <g stroke="#8bff4a" stroke-opacity=".22" fill="none">
+    <path d="M340 108 H364" class="flow"/>
+    <path d="M340 208 H364" class="flow"/>
+    <path d="M340 308 H364" class="flow"/>
+  </g>
+  <g fill="#8bff4a" opacity=".7">
+    <path d="M362 104 L368 108 L362 112 Z"/>
+    <path d="M362 204 L368 208 L362 212 Z"/>
+    <path d="M362 304 L368 308 L362 312 Z"/>
+  </g>
+
+    <g transform="translate(364 64)">
+    <rect x="0" y="0" width="388" height="88" rx="10" fill="#07141f" fill-opacity=".86" stroke="#2fd9f2" stroke-opacity=".22"/>
+    <rect x="0" y="14" width="3" height="24" rx="1.5" fill="#2fd9f2" opacity=".8"/>
+    <text x="18" y="24" class="mono card-title" fill="#f4e5c8">MAPS</text>
+    <text x="370" y="24" text-anchor="end" class="mono card-count" fill="#2fd9f2">07</text>
+    <text x="18" y="48" class="mono card-ex" fill="#8ba3b0">Geocode &#183; Directions &#183; Street View &#183; Elevation +3</text>
+    <rect x="18" y="66" width="356" height="2" rx="1" fill="#f4e5c8" fill-opacity=".07"/>
+    <rect x="18" y="66" width="249" height="2" rx="1" fill="#2fd9f2" opacity=".55"/>
+    <text x="370" y="80" text-anchor="end" class="mono card-tag" fill="#2fd9f2" opacity=".65">PROBE &#8594;</text>
+  </g>
+  <g transform="translate(772 64)">
+    <rect x="0" y="0" width="388" height="88" rx="10" fill="#07141f" fill-opacity=".86" stroke="#8bff4a" stroke-opacity=".22"/>
+    <rect x="0" y="14" width="3" height="24" rx="1.5" fill="#8bff4a" opacity=".8"/>
+    <text x="18" y="24" class="mono card-title" fill="#f4e5c8">PLACES</text>
+    <text x="370" y="24" text-anchor="end" class="mono card-count" fill="#8bff4a">07</text>
+    <text x="18" y="48" class="mono card-ex" fill="#8ba3b0">Text Search &#183; Details &#183; Autocomplete &#183; Photos +3</text>
+    <rect x="18" y="66" width="356" height="2" rx="1" fill="#f4e5c8" fill-opacity=".07"/>
+    <rect x="18" y="66" width="249" height="2" rx="1" fill="#8bff4a" opacity=".55"/>
+    <text x="370" y="80" text-anchor="end" class="mono card-tag" fill="#8bff4a" opacity=".65">PROBE &#8594;</text>
+  </g>
+  <g transform="translate(364 164)">
+    <rect x="0" y="0" width="388" height="88" rx="10" fill="#07141f" fill-opacity=".86" stroke="#ff8a1f" stroke-opacity=".22"/>
+    <rect x="0" y="14" width="3" height="24" rx="1.5" fill="#ff8a1f" opacity=".8"/>
+    <text x="18" y="24" class="mono card-title" fill="#f4e5c8">ROADS</text>
+    <text x="370" y="24" text-anchor="end" class="mono card-count" fill="#ff8a1f">03</text>
+    <text x="18" y="48" class="mono card-ex" fill="#8ba3b0">Nearest &#183; Snap to Roads &#183; Speed Limits</text>
+    <rect x="18" y="66" width="356" height="2" rx="1" fill="#f4e5c8" fill-opacity=".07"/>
+    <rect x="18" y="66" width="106" height="2" rx="1" fill="#ff8a1f" opacity=".55"/>
+    <text x="370" y="80" text-anchor="end" class="mono card-tag" fill="#ff8a1f" opacity=".65">PROBE &#8594;</text>
+  </g>
+  <g transform="translate(772 164)">
+    <rect x="0" y="0" width="388" height="88" rx="10" fill="#07141f" fill-opacity=".86" stroke="#f4e5c8" stroke-opacity=".22"/>
+    <rect x="0" y="14" width="3" height="24" rx="1.5" fill="#f4e5c8" opacity=".8"/>
+    <text x="18" y="24" class="mono card-title" fill="#f4e5c8">GEMINI</text>
+    <text x="370" y="24" text-anchor="end" class="mono card-count" fill="#f4e5c8">04</text>
+    <text x="18" y="48" class="mono card-ex" fill="#8ba3b0">Generate &#183; List Models &#183; Files &#183; Cached Contents</text>
+    <rect x="18" y="66" width="356" height="2" rx="1" fill="#f4e5c8" fill-opacity=".07"/>
+    <rect x="18" y="66" width="142" height="2" rx="1" fill="#f4e5c8" opacity=".55"/>
+    <text x="370" y="80" text-anchor="end" class="mono card-tag" fill="#f4e5c8" opacity=".65">PROBE &#8594;</text>
+  </g>
+  <g transform="translate(364 264)">
+    <rect x="0" y="0" width="388" height="88" rx="10" fill="#07141f" fill-opacity=".86" stroke="#5aa7ff" stroke-opacity=".22"/>
+    <rect x="0" y="14" width="3" height="24" rx="1.5" fill="#5aa7ff" opacity=".8"/>
+    <text x="18" y="24" class="mono card-title" fill="#f4e5c8">CLOUD</text>
+    <text x="370" y="24" text-anchor="end" class="mono card-count" fill="#5aa7ff">06</text>
+    <text x="18" y="48" class="mono card-ex" fill="#8ba3b0">Vision &#183; Translation &#183; Custom Search &#183; Address Validation +2</text>
+    <rect x="18" y="66" width="356" height="2" rx="1" fill="#f4e5c8" fill-opacity=".07"/>
+    <rect x="18" y="66" width="213" height="2" rx="1" fill="#5aa7ff" opacity=".55"/>
+    <text x="370" y="80" text-anchor="end" class="mono card-tag" fill="#5aa7ff" opacity=".65">PROBE &#8594;</text>
+  </g>
+  <g transform="translate(772 264)">
+    <rect x="0" y="0" width="388" height="88" rx="10" fill="#07141f" fill-opacity=".86" stroke="#ff2d46" stroke-opacity=".22"/>
+    <rect x="0" y="14" width="3" height="24" rx="1.5" fill="#ff2d46" opacity=".8"/>
+    <text x="18" y="24" class="mono card-title" fill="#f4e5c8">NEW APIS</text>
+    <text x="370" y="24" text-anchor="end" class="mono card-count" fill="#ff2d46">04</text>
+    <text x="18" y="48" class="mono card-ex" fill="#8ba3b0">Routes &#183; Aerial View &#183; Air Quality &#183; Pollen</text>
+    <rect x="18" y="66" width="356" height="2" rx="1" fill="#f4e5c8" fill-opacity=".07"/>
+    <rect x="18" y="66" width="142" height="2" rx="1" fill="#ff2d46" opacity=".55"/>
+    <text x="370" y="80" text-anchor="end" class="mono card-tag" fill="#ff2d46" opacity=".65">PROBE &#8594;</text>
+  </g>
+
+  <!-- impact band -->
+  <g transform="translate(364 364)">
+    <rect x="0" y="0" width="796" height="40" rx="20" fill="#8bff4a" fill-opacity=".04" stroke="#f4e5c8" stroke-opacity=".12"/>
+    <circle cx="20" cy="20" r="3.4" fill="#ff2d46" class="pulse"/>
+    <text x="34" y="24" class="mono" font-size="9" letter-spacing="1.2" fill="#f4e5c8">SAMPLE RUN &#183; 7 OF 31 ENDPOINTS VULNERABLE</text>
+
+    <rect x="330" y="18" width="220" height="4" rx="2" fill="#f4e5c8" fill-opacity=".08"/>
+    <rect x="330" y="18" width="220" height="4" rx="2" fill="url(#cimpact)" opacity=".8"/>
+    <text x="330" y="12" class="mono" font-size="7" letter-spacing="1.2" fill="#8ba3b0">LOW</text>
+    <text x="550" y="12" text-anchor="end" class="mono" font-size="7" letter-spacing="1.2" fill="#8ba3b0">CRITICAL</text>
+
+    <text x="776" y="25" text-anchor="end" class="mono" font-size="12" font-weight="800" fill="#8bff4a" letter-spacing=".3">$8,383 / 100K REQ</text>
+  </g>
+</svg>

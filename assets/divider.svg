@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 28" width="1200" height="28" role="img" aria-label="Section divider">
+  <defs>
+    <linearGradient id="dl" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8bff4a" stop-opacity="0"/>
+      <stop offset=".28" stop-color="#8bff4a" stop-opacity=".5"/>
+      <stop offset=".5" stop-color="#f4e5c8" stop-opacity=".28"/>
+      <stop offset=".72" stop-color="#ff2d46" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#ff2d46" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <path d="M60 14 H550" stroke="url(#dl)" stroke-width="1.2"/>
+  <path d="M650 14 H1140" stroke="url(#dl)" stroke-width="1.2" transform="scale(-1 1) translate(-1200 0)"/>
+  <g transform="translate(600 14)">
+    <path d="M0 -11 C-6 -11 -10 -7 -10 -1 C-10 6 0 13 0 13 C0 13 10 6 10 -1 C10 -7 6 -11 0 -11 Z"
+          fill="#8bff4a" fill-opacity=".1" stroke="#8bff4a" stroke-opacity=".55" transform="scale(.8)"/>
+    <circle cx="0" cy="-2" r="2.6" fill="#ff2d46" fill-opacity=".8"/>
+  </g>
+  <circle cx="570" cy="14" r="1.6" fill="#2fd9f2" fill-opacity=".6"/>
+  <circle cx="630" cy="14" r="1.6" fill="#ff2d46" fill-opacity=".6"/>
+</svg>

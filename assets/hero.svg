@@ -1,0 +1,310 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 460" width="1280" height="460" role="img" aria-labelledby="gtitle gdesc">
+  <title id="gtitle">GmapsXploit - one exposed Google API key mapped across thirty-one endpoints</title>
+  <desc id="gdesc">A dark cyber map with red exposed-key pins, a green restricted pin, a glowing route, and a billing impact panel reading eight thousand three hundred eighty-three dollars per hundred thousand requests.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#04101a"/>
+      <stop offset=".52" stop-color="#061824"/>
+      <stop offset="1" stop-color="#0b1018"/>
+    </linearGradient>
+    <radialGradient id="greenGlow" cx=".76" cy=".28" r=".62">
+      <stop offset="0" stop-color="#8bff4a" stop-opacity=".16"/>
+      <stop offset=".55" stop-color="#8bff4a" stop-opacity=".035"/>
+      <stop offset="1" stop-color="#8bff4a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="redGlow" cx=".86" cy=".44" r=".5">
+      <stop offset="0" stop-color="#ff2d46" stop-opacity=".18"/>
+      <stop offset=".5" stop-color="#ff2d46" stop-opacity=".04"/>
+      <stop offset="1" stop-color="#ff2d46" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="wordCream" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fffaf0"/>
+      <stop offset=".6" stop-color="#f4e5c8"/>
+      <stop offset="1" stop-color="#e7d3ad"/>
+    </linearGradient>
+    <linearGradient id="wordGreen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d7ffb5"/>
+      <stop offset=".42" stop-color="#8bff4a"/>
+      <stop offset="1" stop-color="#5fe22b"/>
+    </linearGradient>
+    <linearGradient id="route" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#2fd9f2"/>
+      <stop offset=".52" stop-color="#8bff4a"/>
+      <stop offset="1" stop-color="#f4e5c8"/>
+    </linearGradient>
+    <linearGradient id="impact" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8bff4a"/>
+      <stop offset=".55" stop-color="#ff8a1f"/>
+      <stop offset="1" stop-color="#ff2d46"/>
+    </linearGradient>
+    <linearGradient id="scanBand" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8bff4a" stop-opacity="0"/>
+      <stop offset=".45" stop-color="#8bff4a" stop-opacity=".12"/>
+      <stop offset=".55" stop-color="#2fd9f2" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#2fd9f2" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sweepGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8bff4a" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#8bff4a" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M 34 0 L 0 0 0 34" fill="none" stroke="#2fd9f2" stroke-opacity=".045"/>
+    </pattern>
+    <pattern id="streets" width="38" height="38" patternUnits="userSpaceOnUse">
+      <path d="M 38 0 L 0 0 0 38" fill="none" stroke="#2fd9f2" stroke-opacity=".12"/>
+    </pattern>
+    <pattern id="dots" width="10" height="10" patternUnits="userSpaceOnUse">
+      <circle cx="1.4" cy="1.4" r=".85" fill="#f4e5c8" fill-opacity=".045"/>
+    </pattern>
+    <pattern id="scanlines" width="5" height="5" patternUnits="userSpaceOnUse">
+      <rect width="5" height="1" fill="#ffffff" fill-opacity=".016"/>
+    </pattern>
+    <filter id="soft" x="-70%" y="-70%" width="240%" height="240%">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="lineGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="2.4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="mapclip"><rect x="676" y="52" width="540" height="302" rx="16"/></clipPath>
+    <style>
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+      .sans { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .eyebrow { font-size: 12px; font-weight: 800; letter-spacing: 3.4px; fill: #8bff4a; }
+      .micro { font-size: 9px; letter-spacing: 1.75px; fill: #8ba3b0; }
+      .title { font-size: 70px; font-weight: 800; letter-spacing: -2.6px; }
+      .tagline { font-size: 15px; font-weight: 800; letter-spacing: 2.5px; fill: #f4e5c8; }
+      .lede { font-size: 13.5px; fill: #8ba3b0; }
+      .chip { font-size: 10.5px; font-weight: 700; letter-spacing: 1.15px; }
+      .hud-h { font-size: 8px; font-weight: 700; letter-spacing: 1.9px; fill: #8ba3b0; }
+      .hud-v { font-size: 12px; font-weight: 800; letter-spacing: .5px; fill: #f4e5c8; }
+      .pin-label { font-size: 8.5px; font-weight: 800; letter-spacing: 1.3px; }
+      .coord { font-size: 8px; letter-spacing: 1.5px; fill: #8ba3b0; }
+      .flow { stroke-dasharray: 5 7; animation: flow 1.8s linear infinite; }
+      .scan { animation: scan 7.6s ease-in-out infinite; }
+      .radar { animation: radar 11s linear infinite; transform-origin: 946px 203px; transform-box: view-box; }
+      .pulse { animation: pulse 2.8s ease-in-out infinite; }
+      .pulse-2 { animation: pulse 2.8s ease-in-out .7s infinite; }
+      .pulse-3 { animation: pulse 2.8s ease-in-out 1.4s infinite; }
+      .safe { animation: pulse 3.4s ease-in-out .35s infinite; }
+      .blink { animation: blink 1.15s steps(1) infinite; }
+      .glitch { animation: glitch 7.4s steps(1) infinite; }
+      .glint { animation: glint 4.4s ease-in-out infinite; }
+      @keyframes flow { to { stroke-dashoffset: -48; } }
+      @keyframes scan { 0% { transform: translateY(-96px); opacity: 0; } 14% { opacity: .55; } 76% { opacity: .16; } 100% { transform: translateY(266px); opacity: 0; } }
+      @keyframes radar { to { transform: rotate(360deg); } }
+      @keyframes pulse { 0%,100% { opacity: .55; } 50% { opacity: 1; } }
+      @keyframes blink { 0%,49% { opacity: 1; } 50%,100% { opacity: .2; } }
+      @keyframes glitch { 0%,91%,100% { transform: translate(0,0); } 92% { transform: translate(2px,0); } 93% { transform: translate(-2px,1px); } 94% { transform: translate(1px,-1px); } }
+      @keyframes glint { 0%,100% { opacity: .25; } 45% { opacity: .9; } 55% { opacity: .35; } }
+      @media (prefers-reduced-motion: reduce) { .flow,.scan,.radar,.pulse,.pulse-2,.pulse-3,.safe,.blink,.glitch,.glint { animation: none; } }
+    </style>
+  </defs>
+
+  <rect width="1280" height="460" fill="url(#bg)"/>
+  <rect width="1280" height="460" fill="url(#grid)"/>
+  <rect width="1280" height="460" fill="url(#dots)" opacity=".8"/>
+  <rect width="1280" height="460" fill="url(#scanlines)"/>
+  <rect width="1280" height="460" fill="url(#greenGlow)"/>
+  <rect width="1280" height="460" fill="url(#redGlow)"/>
+
+  <g stroke="#8bff4a" stroke-opacity=".09" fill="none">
+    <path d="M-20 372 L120 232 M20 408 L160 268 M60 444 L200 304"/>
+    <path d="M-10 300 C50 300 60 260 110 260 S180 286 220 240"/>
+  </g>
+  <g stroke="#ff2d46" stroke-opacity=".08" fill="none">
+    <path d="M-20 430 L110 300 M-20 460 L90 350"/>
+  </g>
+
+  <g fill="none" stroke="#f4e5c8" stroke-opacity=".26" stroke-width="1.2">
+    <path d="M26 66 V26 H66"/>
+    <path d="M1214 26 H1254 V66"/>
+    <path d="M26 394 V434 H66"/>
+    <path d="M1214 434 H1254 V394"/>
+  </g>
+
+  <!-- identity -->
+  <g transform="translate(64 48)">
+    <path d="M11 2 C5 2 0 7 0 13 C0 21 11 30 11 30 C11 30 22 21 22 13 C22 7 17 2 11 2 Z"
+          fill="#8bff4a" fill-opacity=".12" stroke="#8bff4a" stroke-width="1.4"/>
+    <circle cx="11" cy="13" r="4" fill="#ff2d46"/>
+    <text x="36" y="12" class="mono eyebrow">GMAPSXPLOIT</text>
+    <text x="36" y="28" class="mono micro">GOOGLE MAPS API AUDITOR &#183; BASH 4.0+</text>
+  </g>
+
+  <g class="glitch">
+    <text x="66" y="176" class="sans title" opacity=".28" fill="#ff2d46">GmapsXploit</text>
+  </g>
+  <text x="62" y="176" class="sans title"><tspan fill="url(#wordCream)">Gmaps</tspan><tspan fill="url(#wordGreen)">Xploit</tspan></text>
+  <rect x="64" y="192" width="188" height="2" fill="#8bff4a" opacity=".6"/>
+  <rect x="260" y="190" width="92" height="4" fill="#ff2d46" opacity=".7" transform="skewX(-26)"/>
+  <rect x="360" y="189" width="20" height="2" fill="#f4e5c8" opacity=".5"/>
+
+  <text x="64" y="224" class="mono tagline">ONE KEY. THIRTY-ONE ENDPOINTS.</text>
+  <text x="64" y="250" class="sans lede">Map the reachable surface. Price the exposure. Ship the report.</text>
+
+  <g transform="translate(64 276)">
+    <rect x="0" y="0" width="176" height="30" rx="15" fill="#8bff4a" fill-opacity=".06" stroke="#8bff4a" stroke-opacity=".34"/>
+    <circle cx="16" cy="15" r="3.2" fill="#8bff4a"/>
+    <text x="28" y="19" class="mono chip" fill="#d7ffb5">31 ENDPOINTS</text>
+
+    <rect x="188" y="0" width="176" height="30" rx="15" fill="#ff2d46" fill-opacity=".06" stroke="#ff2d46" stroke-opacity=".34"/>
+    <circle cx="204" cy="15" r="3.2" fill="#ff2d46"/>
+    <text x="216" y="19" class="mono chip" fill="#ffa3ad">BILLING IMPACT</text>
+
+    <rect x="376" y="0" width="166" height="30" rx="15" fill="#2fd9f2" fill-opacity=".06" stroke="#2fd9f2" stroke-opacity=".34"/>
+    <circle cx="392" cy="15" r="3.2" fill="#2fd9f2"/>
+    <text x="404" y="19" class="mono chip" fill="#c4f7ff">REPORT-READY</text>
+  </g>
+
+  <g transform="translate(64 326)" class="mono micro">
+    <text x="0" y="0" fill="#8ba3b0">MAPS</text><circle cx="47" cy="-3" r="2" fill="#2fd9f2"/>
+    <text x="58" y="0" fill="#8ba3b0">PLACES</text><circle cx="114" cy="-3" r="2" fill="#8bff4a"/>
+    <text x="125" y="0" fill="#8ba3b0">ROADS</text><circle cx="176" cy="-3" r="2" fill="#ff8a1f"/>
+    <text x="187" y="0" fill="#8ba3b0">GEMINI</text><circle cx="242" cy="-3" r="2" fill="#f4e5c8"/>
+    <text x="253" y="0" fill="#8ba3b0">CLOUD</text><circle cx="303" cy="-3" r="2" fill="#5aa7ff"/>
+    <text x="314" y="0" fill="#8ba3b0">NEW APIS</text><circle cx="382" cy="-3" r="2" fill="#ff2d46"/>
+  </g>
+
+  <text x="64" y="362" class="mono micro" fill="#8ba3b0" opacity=".8">API KEY &#8594; SURFACE MAP &#8594; $ IMPACT</text>
+  <text x="64" y="412" class="mono micro">GITHUB.COM/DEATHSHOTXD/GMAPSXPLOIT</text>
+
+  <!-- map plate -->
+  <g>
+    <rect x="676" y="52" width="540" height="302" rx="16" fill="#06131d" stroke="#8bff4a" stroke-opacity=".22"/>
+    <g clip-path="url(#mapclip)">
+      <rect x="676" y="52" width="540" height="302" fill="#071620"/>
+      <rect x="676" y="52" width="540" height="302" fill="url(#streets)" opacity=".55"/>
+
+      <!-- city blocks -->
+      <g fill="#2fd9f2" fill-opacity=".025" stroke="#2fd9f2" stroke-opacity=".045">
+        <rect x="704" y="78" width="70" height="42" rx="4"/>
+        <rect x="692" y="136" width="54" height="58" rx="4"/>
+        <rect x="802" y="96" width="52" height="48" rx="4"/>
+        <rect x="872" y="66" width="66" height="38" rx="4"/>
+        <rect x="964" y="92" width="48" height="58" rx="4"/>
+        <rect x="1028" y="168" width="58" height="46" rx="4"/>
+        <rect x="1108" y="108" width="52" height="58" rx="4"/>
+        <rect x="744" y="240" width="66" height="48" rx="4"/>
+        <rect x="842" y="270" width="58" height="40" rx="4"/>
+        <rect x="948" y="248" width="72" height="46" rx="4"/>
+        <rect x="1090" y="286" width="64" height="36" rx="4"/>
+      </g>
+
+      <!-- park -->
+      <rect x="1082" y="66" width="86" height="62" rx="8" fill="#8bff4a" fill-opacity=".05" stroke="#8bff4a" stroke-opacity=".1"/>
+
+      <!-- river -->
+      <path d="M744 48 C720 110 782 150 772 202 C764 246 800 282 832 360"
+            fill="none" stroke="#0b2a3c" stroke-width="22" stroke-linecap="round"/>
+      <path d="M744 48 C720 110 782 150 772 202 C764 246 800 282 832 360"
+            fill="none" stroke="#164258" stroke-width="2" stroke-opacity=".55"/>
+
+      <!-- major roads -->
+      <g fill="none" stroke-linecap="round">
+        <path d="M676 118 L1216 150" stroke="#2fd9f2" stroke-opacity=".08" stroke-width="9"/>
+        <path d="M708 354 L760 52" stroke="#f4e5c8" stroke-opacity=".06" stroke-width="7"/>
+        <path d="M900 52 L960 354" stroke="#8bff4a" stroke-opacity=".06" stroke-width="7"/>
+        <path d="M676 268 L1216 236" stroke="#ff2d46" stroke-opacity=".06" stroke-width="8"/>
+      </g>
+
+      <!-- route -->
+      <path d="M700 318 L752 274 L790 200 L858 234 L920 214 L986 158 L1050 150 L1096 226 L1108 258"
+            fill="none" stroke="#8bff4a" stroke-opacity=".17" stroke-width="10" stroke-linecap="round" filter="url(#soft)"/>
+      <path d="M700 318 L752 274 L790 200 L858 234 L920 214 L986 158 L1050 150 L1096 226 L1108 258"
+            fill="none" stroke="url(#route)" stroke-width="2.1" stroke-linecap="round" class="flow" filter="url(#lineGlow)"/>
+      <path d="M790 200 L858 234 L920 214" fill="none" stroke="#ff2d46" stroke-width="2.2" stroke-linecap="round" opacity=".72" class="flow"/>
+      <path d="M986 158 L1050 150 L1096 226" fill="none" stroke="#ff2d46" stroke-width="2.2" stroke-linecap="round" opacity=".72" class="flow"/>
+
+          <g transform="translate(790 200)">
+      <circle cx="0" cy="-27" r="18" fill="#ff2d46" fill-opacity=".08" class="pulse"/>
+      <circle cx="0" cy="-27" r="10" fill="#ff2d46" fill-opacity=".12" stroke="#ff2d46" stroke-opacity=".34"/>
+      <path d="M0 0 C-8 -10 -14 -17 -14 -26 A14 14 0 1 1 14 -26 C14 -17 8 -10 0 0 Z"
+            fill="#ff2d46" fill-opacity=".14" stroke="#ff2d46" stroke-width="1.5" filter="url(#lineGlow)"/>
+      <circle cx="0" cy="-26" r="4.4" fill="#ff2d46"/>
+      <g transform="translate(20 -31)">
+        <rect x="0" y="-9" width="54.1" height="18" rx="9" fill="#06131d" fill-opacity=".9" stroke="#ff2d46" stroke-opacity=".34"/>
+        <text x="27.05" y="3" text-anchor="middle" class="mono pin-label" fill="#ff2d46">GEOCODE</text>
+      </g>
+    </g>
+    <g transform="translate(920 214)">
+      <circle cx="0" cy="-27" r="18" fill="#ff2d46" fill-opacity=".08" class="pulse"/>
+      <circle cx="0" cy="-27" r="10" fill="#ff2d46" fill-opacity=".12" stroke="#ff2d46" stroke-opacity=".34"/>
+      <path d="M0 0 C-8 -10 -14 -17 -14 -26 A14 14 0 1 1 14 -26 C14 -17 8 -10 0 0 Z"
+            fill="#ff2d46" fill-opacity=".14" stroke="#ff2d46" stroke-width="1.5" filter="url(#lineGlow)"/>
+      <circle cx="0" cy="-26" r="4.4" fill="#ff2d46"/>
+      <g transform="translate(-20 -31)">
+        <rect x="-47.8" y="-9" width="47.8" height="18" rx="9" fill="#06131d" fill-opacity=".9" stroke="#ff2d46" stroke-opacity=".34"/>
+        <text x="-23.9" y="3" text-anchor="middle" class="mono pin-label" fill="#ff2d46">PLACES</text>
+      </g>
+    </g>
+    <g transform="translate(1050 150)">
+      <circle cx="0" cy="-27" r="18" fill="#ff2d46" fill-opacity=".08" class="pulse"/>
+      <circle cx="0" cy="-27" r="10" fill="#ff2d46" fill-opacity=".12" stroke="#ff2d46" stroke-opacity=".34"/>
+      <path d="M0 0 C-8 -10 -14 -17 -14 -26 A14 14 0 1 1 14 -26 C14 -17 8 -10 0 0 Z"
+            fill="#ff2d46" fill-opacity=".14" stroke="#ff2d46" stroke-width="1.5" filter="url(#lineGlow)"/>
+      <circle cx="0" cy="-26" r="4.4" fill="#ff2d46"/>
+      <g transform="translate(20 -31)">
+        <rect x="0" y="-9" width="47.8" height="18" rx="9" fill="#06131d" fill-opacity=".9" stroke="#ff2d46" stroke-opacity=".34"/>
+        <text x="23.9" y="3" text-anchor="middle" class="mono pin-label" fill="#ff2d46">ROUTES</text>
+      </g>
+    </g>
+    <g transform="translate(1108 258)">
+      <circle cx="0" cy="-27" r="18" fill="#8bff4a" fill-opacity=".08" class="safe"/>
+      <circle cx="0" cy="-27" r="10" fill="#8bff4a" fill-opacity=".12" stroke="#8bff4a" stroke-opacity=".34"/>
+      <path d="M0 0 C-8 -10 -14 -17 -14 -26 A14 14 0 1 1 14 -26 C14 -17 8 -10 0 0 Z"
+            fill="#8bff4a" fill-opacity=".14" stroke="#8bff4a" stroke-width="1.5" filter="url(#lineGlow)"/>
+      <circle cx="0" cy="-26" r="4.4" fill="#8bff4a"/>
+      <g transform="translate(-20 -31)">
+        <rect x="-47.8" y="-9" width="47.8" height="18" rx="9" fill="#06131d" fill-opacity=".9" stroke="#8bff4a" stroke-opacity=".34"/>
+        <text x="-23.9" y="3" text-anchor="middle" class="mono pin-label" fill="#8bff4a">SECURE</text>
+      </g>
+    </g>
+
+      <!-- radar sweep -->
+      <g class="radar" opacity=".7">
+        <path d="M946 203 L946 48 A155 155 0 0 1 1056 94 Z" fill="url(#sweepGrad)"/>
+        <path d="M946 203 L946 48" stroke="#8bff4a" stroke-opacity=".18" stroke-width="1"/>
+      </g>
+
+      <!-- scan band -->
+      <rect x="676" y="52" width="540" height="74" fill="url(#scanBand)" class="scan"/>
+
+      <!-- exposed key chip -->
+      <g transform="translate(692 70)">
+        <rect x="0" y="0" width="190" height="54" rx="10" fill="#041018" fill-opacity=".9" stroke="#8bff4a" stroke-opacity=".2"/>
+        <circle cx="14" cy="15" r="3" fill="#ff2d46" class="blink"/>
+        <text x="24" y="18" class="mono pin-label" fill="#ff2d46">EXPOSED KEY</text>
+        <text x="12" y="37" class="mono" font-size="12" font-weight="700" fill="#f4e5c8" letter-spacing=".4">AIza&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;</text>
+        <text x="12" y="48" class="mono" font-size="7.5" letter-spacing="1.2" fill="#8ba3b0">REFERER: NONE</text>
+      </g>
+
+      <text x="1196" y="76" text-anchor="end" class="mono pin-label" fill="#8bff4a" opacity=".8">SURFACE / LIVE</text>
+      <circle cx="1206" cy="84" r="2.6" fill="#8bff4a" class="blink" opacity=".85"/>
+
+      <text x="696" y="338" class="mono coord">37.7749 N / 122.4194 W</text>
+      <text x="1196" y="338" text-anchor="end" class="mono coord" opacity=".75">ZOOM 12 / GRID 04</text>
+    </g>
+  </g>
+
+  <!-- impact strip -->
+  <g transform="translate(676 366)">
+    <rect x="0" y="0" width="540" height="56" rx="12" fill="#07141f" stroke="#f4e5c8" stroke-opacity=".1"/>
+    <path d="M0 12 V44" stroke="#8bff4a" stroke-opacity=".35" stroke-width="2"/>
+    <text x="20" y="18" class="mono hud-h">SURFACE</text>
+    <text x="20" y="38" class="mono hud-v">31 ENDPOINTS</text>
+
+    <path d="M160 12 V44" stroke="#8ba3b0" stroke-opacity=".14"/>
+    <text x="180" y="18" class="mono hud-h">VULNERABLE</text>
+    <text x="180" y="38" class="mono hud-v" fill="#ffa3ad">7 CONFIRMED</text>
+
+    <path d="M300 12 V44" stroke="#8ba3b0" stroke-opacity=".14"/>
+    <text x="318" y="18" class="mono hud-h">IMPACT / 100K</text>
+    <text x="318" y="40" class="mono" font-size="16" font-weight="800" fill="#8bff4a" letter-spacing=".3">$8,383</text>
+
+    <rect x="452" y="31" width="68" height="5" rx="2.5" fill="#f4e5c8" fill-opacity=".1"/>
+    <rect x="452" y="31" width="52" height="5" rx="2.5" fill="url(#impact)" opacity=".85"/>
+    <text x="452" y="22" class="mono" font-size="7" letter-spacing="1.2" fill="#8ba3b0">SAMPLE RUN</text>
+  </g>
+</svg>
